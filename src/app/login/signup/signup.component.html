@@ -1,0 +1,104 @@
+<div class="login-page bg-dark">
+    <div class="container">
+        <div class="alert alert-danger" *ngIf="show">
+            <strong>{{ error }}</strong>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class=" shadow rounded">
+                    <div class="row">
+                        <div class="col-md-7 pe-0 box-shadowing">
+                            <div class="form-left h-100 py-5 px-5 ">
+                                <form action="" class="row g-4" [formGroup]="registerForm"
+                                    (ngSubmit)="SignUp(registerForm.value)">
+
+                                    <div class="col-12">
+                                        <label>Full Name<span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-person-workspace"></i></div>
+                                            <input type="text" class="form-control" placeholder="Enter Full Name"
+                                                formControlName="fullname">
+                                            <span
+                                                *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched"
+                                                style="color:red">Please
+                                                enter valid input </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Username<span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-envelope-at-fill"></i></div>
+                                            <input type="text" class="form-control" placeholder="Enter Username"
+                                                formControlName="username">
+                                            <span
+                                                *ngIf="usernameValidator && usernameValidator.invalid && usernameValidator.touched"
+                                                style="color:red">Please
+                                                enter valid input </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label>Password<span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-person-fill-lock"></i></div>
+                                            <input type="password" class="form-control" placeholder="Enter Password"
+                                                formControlName="password">&NonBreakingSpace;
+                                            <div matTooltip="Passwords must be at least 6 characters.
+                                            Passwords must have at least one non alphanumeric character.
+                                            Passwords must have at least one lowercase ('a'-'z').
+                                            Passwords must have at least one uppercase ('A'-'Z')."
+                                                matTooltipPosition="above">
+                                            </div>
+
+                                            <span
+                                                *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched"
+                                                style="color:red">Please
+                                                enter valid input
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Confirm Password<span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-person-fill-lock"></i></div>
+                                            <input type="password" class="form-control" placeholder="Re-Enter Password"
+                                                formControlName="confirmPassword">
+                                            <span
+                                                *ngIf="cpasswordValidator && cpasswordValidator.invalid && cpasswordValidator.touched"
+                                                style="color:red">
+                                                Please
+                                                enter valid input </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckDefault" formControlName="isAdmin" (change)="toggleAdmin()">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">Admin
+                                                </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="login" class="float-end text-primary">Login</a><br>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit"
+                                            class="btn btn-primary px-4 float-end bg-primary">Register</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-5 ps-0 d-none d-md-block inset-shadowing">
+                            <div class="form-right text-white text-center pt-5">
+                                <i class="bi bi-person-lines-fill"></i>
+                                <h2 class="fs-1">Welcome to <br>My Contacts</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

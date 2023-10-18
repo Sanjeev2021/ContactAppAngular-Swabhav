@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<div class="nav-box">
+    <div class="user-box bg-dark" (click)="toggleOptions()">
+        <div class="user-header">
+            Admin
+        </div>
+        <div class="options bg-dark" [ngStyle]="{ display: optionsVisible ? 'block' : 'none' }">
+            <div class="option" (click)="nav('add-admin')">Create Admin</div>
+            <div class="option" (click)="nav('view-admin')">View Admin</div>
+            <div class="option" (click)="nav('delete-admin')">Delete & Update Admin</div>
+        </div>
+    </div>
+    <div class="user-box bg-dark" (click)="toggleAdminOptions()">
+        <div class="user-header">
+            User
+        </div>
+        <div class="options bg-dark" [ngStyle]="{ display: optionsAdminVisible ? 'block' : 'none' }">
+            <div class="option" (click)="nav('add-user')">Create User</div>
+            <div class="option" (click)="nav('view-user')">View User</div>
+            <div class="option" (click)="nav('delete-user')">Delete & Update User</div>
+        </div>
+    </div>
+
+
+    <div class="user-box bg-dark" (click)="toggleOptionsContact()">
+        <div class="user-header">
+            Contact
+        </div>
+        <div class="options bg-dark" [ngStyle]="{ display: optionsContactVisible ? 'block' : 'none' }">
+            <div class="option" (click)="navId('add-contact')">Create Contact</div>
+            <div class="option" (click)="navId('view-contact')">View Contact</div>
+            <div class="option" (click)="navId('delete-contact')">Delete & Update Contact</div>
+        </div>
+    </div>
+
+    <div class="user-box bg-dark" (click)="toggleOptionsContactInfo()">
+        <div class="user-header">
+            ContactInfo
+        </div>
+        <div class="options bg-dark" [ngStyle]="{ display: optionsContactInfoVisible ? 'block' : 'none' }">
+            <div class="option" (click)="navId('add-contactinfo')">Create ContactInfo</div>
+            <div class="option" (click)="navId('view-contactinfo')">View ContactInfo</div>
+            <div class="option" (click)="navId('delete-contactinfo')">Delete & Update ContactInfo</div>
+        </div>
+    </div>
+</div>
+

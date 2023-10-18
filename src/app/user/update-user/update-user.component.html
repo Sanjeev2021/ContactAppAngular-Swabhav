@@ -1,0 +1,26 @@
+<div [ngStyle]="{ display: alert ? 'block' : 'none' }" class="alert alert-danger alert-dismissible fade show alertstyle" role="alert">
+  <strong>{{error}}</strong>
+</div>
+<!-- update-user.component.html -->
+
+<div class="wrapper">
+
+  
+    <div class="update-user form-bg">
+        <h2>Update User</h2>
+      
+        <form [formGroup]="form" (ngSubmit)="updateUser()">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" formControlName="fullname">
+      
+          <label for="username">Username:</label>
+          <input type="text" id="username" formControlName="username">
+      
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password">
+      
+          <button type="submit">Update User</button>
+        </form>
+      </div>
+      
+</div>

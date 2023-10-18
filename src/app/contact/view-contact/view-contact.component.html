@@ -1,0 +1,33 @@
+<div class="wrapper">
+
+  <div class="view-user-container form-bg">
+    <h2>Contact Details</h2>
+    <div>
+      <input type="text" class="searchbar" [(ngModel)]="searchQuery" placeholder="Search...">
+      <button (click)="searchContact(searchQuery)" class="search-icon"><i class="bi bi-search"></i></button>
+    </div>
+
+    <ul class="user-list">
+      <div *ngIf="searchQueryEmpty">
+        <li *ngFor="let contact of contactData" class="user-item">
+          <strong>ID:</strong> {{ contact.ID }}<br>
+          <strong>Username:</strong> {{ contact.FullName }}<br>
+        </li>
+      </div>
+      <div *ngIf="!searchQueryEmpty">
+        <div *ngIf="foundContact.length > 0">
+          <li *ngFor="let contact of foundContact" class="user-item">
+          <strong>ID:</strong> {{ contact.ID }}<br>
+          <strong>Username:</strong> {{ contact.FullName }}<br>
+          </li>
+        </div>
+        <div *ngIf="foundContact.length === 0">
+          <li class="user-item">
+          <strong>No contact found.</strong>
+        </li>
+        </div>
+      </div>
+    </ul>
+  </div>
+
+</div>

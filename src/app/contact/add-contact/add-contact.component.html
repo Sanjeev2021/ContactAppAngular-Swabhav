@@ -1,0 +1,16 @@
+<div [ngStyle]="{ display: alert ? 'block' : 'none' }" class="alert alert-danger alert-dismissible fade show alertstyle" role="alert">
+    <strong>{{error}}</strong>
+  </div>
+  
+<div class="wrapper"> <!--Centers the content inside-->
+    <div class="add-contact-container form-bg">
+        <h2><strong class="header">Add Contact</strong></h2>
+        <form [formGroup]="form" (ngSubmit)="saveContact()">
+            <div class="form group">
+                <label for="contactname">Contact Name</label>
+                <input type="text" id="contactname" placeholder="contact name..." formControlName="contactname"  required />
+            </div>
+            <button type ="submit">Add Contact</button>
+        </form>
+    </div>
+</div>

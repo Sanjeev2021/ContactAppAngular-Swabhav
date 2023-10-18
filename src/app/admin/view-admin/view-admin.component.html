@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="view-user-container form-bg">
+      <h2>View Admins</h2>
+      <div>
+        <input type="text" class="searchbar" [(ngModel)]="searchQuery" placeholder="Search...">
+        <button (click)="searchUser(searchQuery)" class="search-icon"><i class="bi bi-search"></i></button>
+      </div>
+      <ul class="user-list">
+        <div *ngIf="searchQueryEmpty">
+          <li *ngFor="let admin of adminData" class="user-item">
+            <strong>ID:</strong> {{ admin.ID }}<br>
+            <strong>Username:</strong> {{ admin.Username }}<br>
+          </li>
+        </div>
+        <div *ngIf="!searchQueryEmpty">
+          <li *ngIf="foundAdmin" class="user-item">
+            <strong>ID:</strong> {{ foundAdmin.ID }}<br>
+            <strong>Username:</strong> {{ foundAdmin.Username }}<br>
+          </li>
+          <li *ngIf="!foundAdmin" class="user-item">
+            <strong>No user found.</strong>
+        </div>
+      </ul>
+    </div>
+  </div>
+  
+  

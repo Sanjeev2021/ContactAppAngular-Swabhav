@@ -1,0 +1,76 @@
+/* update-user.component.css */
+
+.update-user {
+    max-width: 400px;
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    color: #121212;
+    border: 1px solid #121212;  
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  button {
+    margin-top: 10px;
+    border: 2px solid #fff;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: red;
+    background-position: center;
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    opacity: 0.5;
+  }
+
+  
+  button[type="submit"] {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,1) inset;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

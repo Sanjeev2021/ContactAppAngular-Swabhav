@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="view-user-container form-bg">
+    <h2>View Users</h2>
+    <div>
+      <input type="text" class="searchbar" [(ngModel)]="searchQuery" placeholder="Search...">
+      <button (click)="searchUser(searchQuery)" class="search-icon"><i class="bi bi-search"></i></button>
+    </div>
+    <ul class="user-list">
+      <div *ngIf="searchQueryEmpty">
+        <li *ngFor="let user of userData" class="user-item">
+          <strong>ID:</strong> {{ user.ID }}<br>
+          <strong>Username:</strong> {{ user.Username }}<br>
+        </li>
+      </div>
+      <div *ngIf="!searchQueryEmpty">
+        <div *ngIf="foundUser.length > 0"> 
+          <li *ngFor="let user of foundUser" class="user-item">
+            <strong>ID:</strong> {{ user.ID }}<br>
+            <strong>Username:</strong> {{ user.Username }}<br>
+          </li>
+        </div>
+        <div *ngIf="foundUser.length === 0">
+          <li class="user-item">
+            <strong>No user found.</strong>
+          </li>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
+

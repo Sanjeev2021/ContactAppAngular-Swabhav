@@ -1,0 +1,17 @@
+<div [ngStyle]="{ display: alert ? 'block' : 'none' }" class="alert alert-danger alert-dismissible fade show alertstyle"
+  role="alert">
+  <strong>{{error}}</strong>
+</div>
+
+<div class="wrapper">
+  <div class="update-user form-bg">
+    <h2>Update Contact</h2>
+    <form [formGroup]="form" (ngSubmit)="updateContact()">
+      <div class="form-group">
+        <label for="contactname">Contact Name:</label>
+        <input type="text" id="contactname" formControlName="contactname" class="form-control">
+      </div>
+      <button type="submit" class="btn-update">Update Contact</button>
+    </form>
+  </div>
+</div>

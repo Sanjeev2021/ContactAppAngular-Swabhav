@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+  <div class="container form-bg">
+    <table>
+      <thead>
+        <tr>
+          <th>Contact Info Type</th>
+          <th>Contact Info Value</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contactinfo of contactinfoData">
+          <td>{{ contactinfo.Type }}</td>
+          <td>{{ contactinfo.Value }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteContactinfo(contactinfo.ID)">Delete</button>
+            <button class="btn btn-primary"
+              (click)="updateContactinfo(contactinfo.ContactRefer, contactinfo.ID)">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
